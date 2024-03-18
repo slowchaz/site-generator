@@ -1,13 +1,19 @@
 from textnode import TextNode
-from htmlnode import HTMLNode, LeafNode
+from htmlnode import HTMLNode, LeafNode, ParentNode
 
 def main():
     print("main")
     
-    leafnode = LeafNode("p", "This is a paragraph of text.")
-    print(leafnode.to_html())
+    node = ParentNode(
+        "p",
+        [
+            LeafNode("b", "Bold text"),
+            LeafNode(None, "Normal text"),
+            LeafNode("i", "italic text"),
+            LeafNode(None, "Normal text"),
+        ],
+    )   
 
-    leafnode2 = LeafNode("a", "Click me!", {"href": "www.example.com"})
-    print(leafnode2.to_html())
+    print(node.to_html())
 
 main()
