@@ -1,4 +1,5 @@
-from textnode import TextNode, text_node_to_html_node, split_nodes_delimiter
+from textnode import TextNode, text_node_to_html_node
+from inline_markdown import split_nodes_delimiter
 from htmlnode import HTMLNode, LeafNode, ParentNode
 
 text_type_text = "text"
